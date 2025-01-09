@@ -68,7 +68,7 @@ def translate_text(text):
             
     return latin_text            
 
-st.subheader("English")
+st.subheader("English:")
 sentence = st.text_input("")
-st.subheader("Pig Latin")
+st.subheader("Pig Latin:")
 st.write(translate_text(sentence))
