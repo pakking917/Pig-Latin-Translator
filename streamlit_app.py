@@ -1,6 +1,7 @@
 import streamlit as st
 
 st.title("🎈 Pig Latin Translator")
+
 def is_vowel(letter):
     '''Checks if each letter is a vowel'''
     # Determine if letter is vowel or not and returns True or False
@@ -28,6 +29,9 @@ def translate_word(word):
                 stem = word[index:]
                 latin_word = stem + prefix + "ay"
                 break
+            
+            # Added condition if there are no vowels in the word
+            latin_word = word + "ay"
     
     #Capitalize if necessary
     if if_capitalized:
@@ -62,8 +66,7 @@ def translate_text(text):
     if word_length > 0:
         latin_text += translate_word(text[start_index:start_index + word_length])
             
-    return latin_text
-            
+    return latin_text            
 
 sentence = st.text_input("Text: ")
 st.write(translate_text(sentence))
