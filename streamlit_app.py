@@ -10,7 +10,7 @@ def is_vowel(letter):
 def translate_word(word):
     '''Translate a single English word into Pig Latin'''
     # Returns the string if it is not entirely constructed of alphabets
-    if word.isalpha() != True:
+    if not word.isalpha():
         return word
     
     # Checks if word is capitalized then lowercase the entire word
